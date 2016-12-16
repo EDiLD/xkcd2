@@ -1,4 +1,30 @@
-# -*- mode: org ; ispell-local-dictionary: "british" -*-  
+xkcd2
+==============================================================================
+
+xkcd2 has been forked from  version 0.0.5 (published  2016-01-13)  [CRAN](https://cran.r-project.org/web/packages/xkcd/index.html)
+
+
+
+NEW FEATURES
+
+
+MINOR IMPROVEMENTS
+
+* Do not expand when using xkcdaxis & omit original axis
+
+BUG FIXES
+
+* removed "Warning: Ignoring unknown aesthetics: xbegin, ybegin, xend, yend)" when using xkcdline
+
+
+DEPRECATED FUNCTIONS
+
+
+DEFUNCT FUNCTIONS
+
+
+
+
 
 
 * xkcd 0.0.5

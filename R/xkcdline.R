@@ -102,8 +102,10 @@ xkcdline <- function(mapping, data, typexkcdline="segment", mask = TRUE, ...) {
     ## but we need x,y [functions pointssegment returns x,y and geom_path requires x,y]
     ## mapping <- mappingjoin(aes(x=x,y=y), mapping) # R CMD check gives NOTES
     mapping <- with(data, mappingjoin(aes(x=x,y=y), mapping))
-    }
-
+  }
+  
+  # keep only x and y (omits "Warning: Ignoring unknown aesthetics: xbegin, ybegin, xend, yend)"
+  mapping <- mapping[c('x', 'y')]
   
   listofpaths <- lapply(listofinterpolateswithillustrativedata,
                         function(x, mapping, mask, ...) {

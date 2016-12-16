@@ -52,8 +52,13 @@ xkcdaxis <- function(xrange, yrange, ...) {
   mappingsegment <- with(dataaxey, aes(xbegin=xbegin,ybegin=ybegin,xend=xend,yend=yend))
   axey <- xkcdline(mappingsegment, dataaxey, xjitteramount = xjitteramount, mask = FALSE, ... )
   coordcarte <- coord_cartesian(xlim = xrange + 1.5*c(-xjitteramount,xjitteramount),
-                                ylim = yrange + 1.5*c(-yjitteramount,yjitteramount))
-  list(c(axex,axey), coordcarte,theme_xkcd())
+                                ylim = yrange + 1.5*c(-yjitteramount,yjitteramount),
+                                # do not expand
+                                expand = FALSE)
+  list(c(axex,axey), 
+       coordcarte,theme_xkcd(), 
+       # omit original axis
+       theme(axis.line = element_blank()))
 }
 
 
